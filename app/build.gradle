@@ -27,5 +27,5 @@ android {
 }
 
 dependencies {
-    api 'com.github.huanxiang0220:live-event-bus:2.0.0'
+
 }
