@@ -27,5 +27,5 @@ android {
 }
 
 dependencies {
-    api 'io.github.mystery:live_event_bus:1.0.0'
+    api 'com.github.huanxiang0220:live-event-bus:2.0.0'
 }
