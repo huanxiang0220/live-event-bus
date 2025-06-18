@@ -1,0 +1,51 @@
+buildscript {
+    ext {
+        kotlin_version = '1.9.24'
+    }
+    repositories {
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // 添加Maven发布插件
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.25.3'
+    }
+}
+
+allprojects {
+    repositories {
+        flatDir {
+            dirs 'libs'
+            dirs project(':app').file('libs')
+        }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        google()
+    }
+
+    // 加上这个
+    tasks.withType(JavaCompile).configureEach {
+        //使在一个单独的守护进程编译
+        options.fork = true
+        //增量编译
+//        options.incremental = true
+    }
+    tasks.withType(Javadoc).tap {
+        configureEach {
+            enabled = false
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
