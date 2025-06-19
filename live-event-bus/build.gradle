@@ -43,7 +43,7 @@ afterEvaluate {
                 from components.release
                 groupId 'com.github.huanxiang0220' // 组织ID
                 artifactId 'live-event-bus' // 项目ID
-                version '2.0.1' // 版本号
+                version '2.0.2' // 版本号
             }
         }
     }

@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     namespace 'com.mystery.live_event_bus'
-    compileSdk 35
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.mystery.live_event_bus"
-        minSdk 24
-        targetSdk 35
+        minSdk 23
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -27,5 +27,5 @@ android {
 }
 
 dependencies {
-
+//    api 'com.github.huanxiang0220:live-event-bus:2.0.0'
 }

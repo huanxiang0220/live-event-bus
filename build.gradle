@@ -3,10 +3,7 @@ buildscript {
         kotlin_version = '1.9.24'
     }
     repositories {
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
         maven { url 'https://jitpack.io' }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
         google()
         mavenCentral()
     }
@@ -20,13 +17,6 @@ buildscript {
 
 allprojects {
     repositories {
-        flatDir {
-            dirs 'libs'
-            dirs project(':app').file('libs')
-        }
-        maven { url 'https://maven.aliyun.com/repository/public' }
-        maven { url 'https://maven.aliyun.com/repository/central' }
-        maven { url 'https://maven.aliyun.com/nexus/content/repositories/releases/' }
         maven { url 'https://jitpack.io' }
         mavenCentral()
         google()
