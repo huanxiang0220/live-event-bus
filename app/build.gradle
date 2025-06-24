@@ -27,6 +27,7 @@ android {
 }
 
 dependencies {
+    api 'io.github.jeremyliao:live-event-bus-x:1.8.0'
 //    api 'com.github.huanxiang0220:live-event-bus:2.0.2'
 //    api 'com.github.huanxiang0220.zaop:zaop-runtime:1.0.1'
 //    api 'com.mystery.zaop:zaop-runtime:1.0.4'
