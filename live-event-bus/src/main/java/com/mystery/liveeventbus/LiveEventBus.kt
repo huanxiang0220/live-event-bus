@@ -22,10 +22,10 @@ object LiveEventBus {
     }
 
     @JvmStatic
-    fun <T> get(
+    fun get(
         key: String,
-    ): Observable<T> {
-        return get(key, Any::class.java) as Observable<T>
+    ): Observable<Any> {
+        return get(key, Any::class.java)
     }
 
     @JvmStatic
